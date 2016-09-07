@@ -1,0 +1,145 @@
+body {
+    display: block;
+    background-color: #FAFAFA;
+    overflow-x: hidden;
+    overflow-y:auto;
+    color: #2f2f2f;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+a, a i, a i:before {
+    cursor: pointer;
+    text-decoration: none;
+    color: #2f2f2f;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+    margin-left: 0;
+}
+
+ul li a {
+    cursor: pointer;
+    color: #2f2f2f;
+}
+
+header.boxed-container {
+    margin: 0 0 16px 0;
+}
+
+footer.boxed-container {
+    margin: 16px 0 0 0;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.material-icons.md-dark { color: rgba(0,0,0,0.64); }
+.material-icons.md-dark.md-inactive { color: rgba(0,0,0,0.31); }
+
+.material-icons.md-light { color: rgba(255,255,255,1); }
+.material-icons.md-light.md-inactive { color: rgba(255,255,255,0.3); }
+
+
+.boxed-container {
+    display: block;
+    background-color: #FAFAFA;;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: rgba(0,0,0,0.3) 0 0 20px 4px;
+}
+
+.boxed-container header {
+    margin: 0;
+}
+
+.boxed-container footer {
+    margin: 0 0 16px 0;
+}
+
+.responsive-spacer {
+    height: 10px;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.padding-30, .padding-40, .padding-50, .padding-60 {
+    overflow: hidden;
+}
+
+.padding-50 {
+    padding: 35px 50px 40px 50px;
+}
+
+.font-accent {
+    font-family: 'Comfortaa', cursive;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bg-darken-01 {
+    background: rgba(0,0,0,0.1);
+}
+
+.bg-darken-03 {
+    background: rgba(0,0,0,0.3);
+}
+
+.block-color01 {
+    background-color: #FFC107;
+}
+
+.block-color02 {
+    background-color: #FFA000;
+}
+
+.block-color03 {
+    background-color: #FFE082;
+}
+
+.accent-color01 {
+    background-color: #2979FF;
+}
+
+
+@media (max-width: 991px){
+    .boxed-container header {
+        margin: 0;
+    }
+    .boxed-container footer {
+        margin: 0;
+    }
+
+    .responsive-spacer {
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px){
+    .responsive-spacer{
+        height: 60px;
+    }
+}
+
+@media (max-width: 400px){
+    .responsive-spacer{
+        height: 40px;
+    }
+}
