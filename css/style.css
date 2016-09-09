@@ -32,24 +32,31 @@ ul li a {
     color: #2f2f2f;
 }
 
-header.boxed-container {
-    margin: 0 0 16px 0;
+footer, footer i, footer i.material-icons {
+    color: rgba(0,0,0,0.54);
+    font-size: 12px;
 }
 
-footer.boxed-container {
-    margin: 16px 0 0 0;
+header.boxed-container {
+    margin: 0 0 16px 0;
 }
 
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+.material-icons.md-60 { font-size: 60px; }
+.material-icons.md-72 { font-size: 72px; }
 
 .material-icons.md-dark { color: rgba(0,0,0,0.64); }
 .material-icons.md-dark.md-inactive { color: rgba(0,0,0,0.31); }
 
 .material-icons.md-light { color: rgba(255,255,255,1); }
 .material-icons.md-light.md-inactive { color: rgba(255,255,255,0.3); }
+
+.app-logo {
+    margin-top: 16px;
+}
 
 
 .boxed-container {
@@ -58,7 +65,7 @@ footer.boxed-container {
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    box-shadow: rgba(0,0,0,0.3) 0 0 20px 4px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .boxed-container header {
@@ -116,6 +123,13 @@ footer.boxed-container {
 
 .accent-color01 {
     background-color: #2979FF;
+}
+
+.card-row > div {
+    background-color: #FFF;
+    margin: 15px;
+    padding: 15px 0  15px 0;
+    box-shadow: rgba(0,0,0,0.3) 0 0 20px 4px;
 }
 
 
