@@ -24,7 +24,7 @@
 .card-row > div.col-xs-11, .card-row > div.col-xs-12 {
     padding:15px 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 1%;
+    margin: 1.5%;
 }
 
 .card-row > div.col-lg-1.fill-card, .card-row > div.col-lg-2.fill-card,
@@ -53,65 +53,346 @@
 .card-row > div.col-xs-11.fill-card, .card-row > div.col-xs-12.fill-card {
     padding: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 1%;
 }
+
+
 
 .card-row > div.col-lg-12, .card-row > div.col-md-12,
 .card-row > div.col-sm-12, .card-row > div.col-xs-12 {
-    width: 98%
+    width: 97%
 }
 
 .card-row > div.col-lg-11, .card-row > div.col-md-11,
 .card-row > div.col-sm-11, .card-row > div.col-xs-11 {
-    width: 89.666666667%
+    width: 88.666666667%
 }
 
 .card-row > div.col-lg-10, .card-row > div.col-md-10,
 .card-row > div.col-sm-10, .card-row > div.col-xs-10 {
-    width: 81.333333333%
+    width: 80.333333333%
 }
 
 .card-row > div.col-lg-9, .card-row > div.col-md-9,
 .card-row > div.col-sm-9, .card-row > div.col-xs-9 {
-    width: 73%
+    width: 72%
 }
 
 .card-row > div.col-lg-8, .card-row > div.col-md-8,
 .card-row > div.col-sm-8, .card-row > div.col-xs-8 {
-    width: 64.666666667%
+    width: 63.666666667%
 }
 
 .card-row > div.col-lg-7, .card-row > div.col-md-7,
 .card-row > div.col-sm-7, .card-row > div.col-xs-7 {
-    width: 56.333333333%
+    width: 55.333333333%
 }
 
 .card-row > div.col-lg-6, .card-row > div.col-md-6,
 .card-row > div.col-sm-6, .card-row > div.col-xs-6 {
-    width: 48%
+    width: 47%
 }
 
 .card-row > div.col-lg-5, .card-row > div.col-md-5,
 .card-row > div.col-sm-5, .card-row > div.col-xs-5 {
-    width: 39.666666667%
+    width: 38.666666667%
 }
 
 .card-row > div.col-lg-4, .card-row > div.col-md-4,
 .card-row > div.col-sm-4, .card-row > div.col-xs-4 {
-    width: 31.333333333%
+    width: 30.333333333%
 }
 
 .card-row > div.col-lg-3, .card-row > div.col-md-3,
 .card-row > div.col-sm-3, .card-row > div.col-xs-3 {
-    width: 23%
+    width: 22%
 }
 
 .card-row > div.col-lg-2, .card-row > div.col-md-2,
 .card-row > div.col-sm-2, .card-row > div.col-xs-2 {
-    width: 14.666666667%
+    width: 13.666666667%
 }
 
 .card-row > div.col-lg-1, .card-row > div.col-md-1,
 .card-row > div.col-sm-1, .card-row > div.col-xs-1 {
-    width: 6.333333333%
+    width: 5.333333333%
+}
+
+@media (min-width: 768px){
+
+    .card-row > div.col-lg-1, .card-row > div.col-lg-2,
+    .card-row > div.col-lg-3, .card-row > div.col-lg-4,
+    .card-row > div.col-lg-5, .card-row > div.col-lg-6,
+    .card-row > div.col-lg-7, .card-row > div.col-lg-8,
+    .card-row > div.col-lg-9, .card-row > div.col-lg-10,
+    .card-row > div.col-lg-11, .card-row > div.col-lg-12,
+    .card-row > div.col-md-1, .card-row > div.col-md-2,
+    .card-row > div.col-md-3, .card-row > div.col-md-4,
+    .card-row > div.col-md-5, .card-row > div.col-md-6,
+    .card-row > div.col-md-7, .card-row > div.col-md-8,
+    .card-row > div.col-md-9, .card-row > div.col-md-10,
+    .card-row > div.col-md-11, .card-row > div.col-md-12,
+    .card-row > div.col-sm-1, .card-row > div.col-sm-2,
+    .card-row > div.col-sm-3, .card-row > div.col-sm-4,
+    .card-row > div.col-sm-5, .card-row > div.col-sm-6,
+    .card-row > div.col-sm-7, .card-row > div.col-sm-8,
+    .card-row > div.col-sm-9, .card-row > div.col-sm-10,
+    .card-row > div.col-sm-11, .card-row > div.col-sm-12,
+    .card-row > div.col-xs-1, .card-row > div.col-xs-2,
+    .card-row > div.col-xs-3, .card-row > div.col-xs-4,
+    .card-row > div.col-xs-5, .card-row > div.col-xs-6,
+    .card-row > div.col-xs-7, .card-row > div.col-xs-8,
+    .card-row > div.col-xs-9, .card-row > div.col-xs-10,
+    .card-row > div.col-xs-11, .card-row > div.col-xs-12 {
+        padding:15px 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 1%;
+    }
+
+    .card-row > div.col-lg-12, .card-row > div.col-md-12,
+    .card-row > div.col-sm-12, .card-row > div.col-xs-12 {
+        width: 98%
+    }
+
+    .card-row > div.col-lg-11, .card-row > div.col-md-11,
+    .card-row > div.col-sm-11, .card-row > div.col-xs-11 {
+        width: 89.666666667%
+    }
+
+    .card-row > div.col-lg-10, .card-row > div.col-md-10,
+    .card-row > div.col-sm-10, .card-row > div.col-xs-10 {
+        width: 81.333333333%
+    }
+
+    .card-row > div.col-lg-9, .card-row > div.col-md-9,
+    .card-row > div.col-sm-9, .card-row > div.col-xs-9 {
+        width: 73%
+    }
+
+    .card-row > div.col-lg-8, .card-row > div.col-md-8,
+    .card-row > div.col-sm-8, .card-row > div.col-xs-8 {
+        width: 64.666666667%
+    }
+
+    .card-row > div.col-lg-7, .card-row > div.col-md-7,
+    .card-row > div.col-sm-7, .card-row > div.col-xs-7 {
+        width: 56.333333333%
+    }
+
+    .card-row > div.col-lg-6, .card-row > div.col-md-6,
+    .card-row > div.col-sm-6, .card-row > div.col-xs-6 {
+        width: 48%
+    }
+
+    .card-row > div.col-lg-5, .card-row > div.col-md-5,
+    .card-row > div.col-sm-5, .card-row > div.col-xs-5 {
+        width: 39.666666667%
+    }
+
+    .card-row > div.col-lg-4, .card-row > div.col-md-4,
+    .card-row > div.col-sm-4, .card-row > div.col-xs-4 {
+        width: 31.333333333%
+    }
+
+    .card-row > div.col-lg-3, .card-row > div.col-md-3,
+    .card-row > div.col-sm-3, .card-row > div.col-xs-3 {
+        width: 23%
+    }
+
+    .card-row > div.col-lg-2, .card-row > div.col-md-2,
+    .card-row > div.col-sm-2, .card-row > div.col-xs-2 {
+        width: 14.666666667%
+    }
+
+    .card-row > div.col-lg-1, .card-row > div.col-md-1,
+    .card-row > div.col-sm-1, .card-row > div.col-xs-1 {
+        width: 6.333333333%
+    }
+
+}
+
+@media (min-width: 992px){
+
+    .card-row > div.col-lg-1, .card-row > div.col-lg-2,
+    .card-row > div.col-lg-3, .card-row > div.col-lg-4,
+    .card-row > div.col-lg-5, .card-row > div.col-lg-6,
+    .card-row > div.col-lg-7, .card-row > div.col-lg-8,
+    .card-row > div.col-lg-9, .card-row > div.col-lg-10,
+    .card-row > div.col-lg-11, .card-row > div.col-lg-12,
+    .card-row > div.col-md-1, .card-row > div.col-md-2,
+    .card-row > div.col-md-3, .card-row > div.col-md-4,
+    .card-row > div.col-md-5, .card-row > div.col-md-6,
+    .card-row > div.col-md-7, .card-row > div.col-md-8,
+    .card-row > div.col-md-9, .card-row > div.col-md-10,
+    .card-row > div.col-md-11, .card-row > div.col-md-12,
+    .card-row > div.col-sm-1, .card-row > div.col-sm-2,
+    .card-row > div.col-sm-3, .card-row > div.col-sm-4,
+    .card-row > div.col-sm-5, .card-row > div.col-sm-6,
+    .card-row > div.col-sm-7, .card-row > div.col-sm-8,
+    .card-row > div.col-sm-9, .card-row > div.col-sm-10,
+    .card-row > div.col-sm-11, .card-row > div.col-sm-12,
+    .card-row > div.col-xs-1, .card-row > div.col-xs-2,
+    .card-row > div.col-xs-3, .card-row > div.col-xs-4,
+    .card-row > div.col-xs-5, .card-row > div.col-xs-6,
+    .card-row > div.col-xs-7, .card-row > div.col-xs-8,
+    .card-row > div.col-xs-9, .card-row > div.col-xs-10,
+    .card-row > div.col-xs-11, .card-row > div.col-xs-12 {
+        padding:15px 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 0.75%;
+    }
+
+    .card-row > div.col-lg-12, .card-row > div.col-md-12,
+    .card-row > div.col-sm-12, .card-row > div.col-xs-12 {
+        width: 98.5%
+    }
+
+    .card-row > div.col-lg-11, .card-row > div.col-md-11,
+    .card-row > div.col-sm-11, .card-row > div.col-xs-11 {
+        width: 90.166666667%
+    }
+
+    .card-row > div.col-lg-10, .card-row > div.col-md-10,
+    .card-row > div.col-sm-10, .card-row > div.col-xs-10 {
+        width: 81.833333333%
+    }
+
+    .card-row > div.col-lg-9, .card-row > div.col-md-9,
+    .card-row > div.col-sm-9, .card-row > div.col-xs-9 {
+        width: 73.5%
+    }
+
+    .card-row > div.col-lg-8, .card-row > div.col-md-8,
+    .card-row > div.col-sm-8, .card-row > div.col-xs-8 {
+        width: 65.166666667%
+    }
+
+    .card-row > div.col-lg-7, .card-row > div.col-md-7,
+    .card-row > div.col-sm-7, .card-row > div.col-xs-7 {
+        width: 56.833333333%
+    }
+
+    .card-row > div.col-lg-6, .card-row > div.col-md-6,
+    .card-row > div.col-sm-6, .card-row > div.col-xs-6 {
+        width: 48.5%
+    }
+
+    .card-row > div.col-lg-5, .card-row > div.col-md-5,
+    .card-row > div.col-sm-5, .card-row > div.col-xs-5 {
+        width: 40.166666667%
+    }
+
+    .card-row > div.col-lg-4, .card-row > div.col-md-4,
+    .card-row > div.col-sm-4, .card-row > div.col-xs-4 {
+        width: 31.833333333%
+    }
+
+    .card-row > div.col-lg-3, .card-row > div.col-md-3,
+    .card-row > div.col-sm-3, .card-row > div.col-xs-3 {
+        width: 23.5%
+    }
+
+    .card-row > div.col-lg-2, .card-row > div.col-md-2,
+    .card-row > div.col-sm-2, .card-row > div.col-xs-2 {
+        width: 15.166666667%
+    }
+
+    .card-row > div.col-lg-1, .card-row > div.col-md-1,
+    .card-row > div.col-sm-1, .card-row > div.col-xs-1 {
+        width: 6.833333333%
+    }
+
+}
+
+
+@media (min-width: 1200px){
+
+    .card-row > div.col-lg-1, .card-row > div.col-lg-2,
+    .card-row > div.col-lg-3, .card-row > div.col-lg-4,
+    .card-row > div.col-lg-5, .card-row > div.col-lg-6,
+    .card-row > div.col-lg-7, .card-row > div.col-lg-8,
+    .card-row > div.col-lg-9, .card-row > div.col-lg-10,
+    .card-row > div.col-lg-11, .card-row > div.col-lg-12,
+    .card-row > div.col-md-1, .card-row > div.col-md-2,
+    .card-row > div.col-md-3, .card-row > div.col-md-4,
+    .card-row > div.col-md-5, .card-row > div.col-md-6,
+    .card-row > div.col-md-7, .card-row > div.col-md-8,
+    .card-row > div.col-md-9, .card-row > div.col-md-10,
+    .card-row > div.col-md-11, .card-row > div.col-md-12,
+    .card-row > div.col-sm-1, .card-row > div.col-sm-2,
+    .card-row > div.col-sm-3, .card-row > div.col-sm-4,
+    .card-row > div.col-sm-5, .card-row > div.col-sm-6,
+    .card-row > div.col-sm-7, .card-row > div.col-sm-8,
+    .card-row > div.col-sm-9, .card-row > div.col-sm-10,
+    .card-row > div.col-sm-11, .card-row > div.col-sm-12,
+    .card-row > div.col-xs-1, .card-row > div.col-xs-2,
+    .card-row > div.col-xs-3, .card-row > div.col-xs-4,
+    .card-row > div.col-xs-5, .card-row > div.col-xs-6,
+    .card-row > div.col-xs-7, .card-row > div.col-xs-8,
+    .card-row > div.col-xs-9, .card-row > div.col-xs-10,
+    .card-row > div.col-xs-11, .card-row > div.col-xs-12 {
+        padding:15px 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 0.5%;
+    }
+
+    .card-row > div.col-lg-12, .card-row > div.col-md-12,
+    .card-row > div.col-sm-12, .card-row > div.col-xs-12 {
+        width: 99%
+    }
+
+    .card-row > div.col-lg-11, .card-row > div.col-md-11,
+    .card-row > div.col-sm-11, .card-row > div.col-xs-11 {
+        width: 90.666666667%
+    }
+
+    .card-row > div.col-lg-10, .card-row > div.col-md-10,
+    .card-row > div.col-sm-10, .card-row > div.col-xs-10 {
+        width: 82.333333333%
+    }
+
+    .card-row > div.col-lg-9, .card-row > div.col-md-9,
+    .card-row > div.col-sm-9, .card-row > div.col-xs-9 {
+        width: 74%
+    }
+
+    .card-row > div.col-lg-8, .card-row > div.col-md-8,
+    .card-row > div.col-sm-8, .card-row > div.col-xs-8 {
+        width: 65.666666667%
+    }
+
+    .card-row > div.col-lg-7, .card-row > div.col-md-7,
+    .card-row > div.col-sm-7, .card-row > div.col-xs-7 {
+        width: 57.333333333%
+    }
+
+    .card-row > div.col-lg-6, .card-row > div.col-md-6,
+    .card-row > div.col-sm-6, .card-row > div.col-xs-6 {
+        width: 49%
+    }
+
+    .card-row > div.col-lg-5, .card-row > div.col-md-5,
+    .card-row > div.col-sm-5, .card-row > div.col-xs-5 {
+        width: 40.666666667%
+    }
+
+    .card-row > div.col-lg-4, .card-row > div.col-md-4,
+    .card-row > div.col-sm-4, .card-row > div.col-xs-4 {
+        width: 32.333333333%
+    }
+
+    .card-row > div.col-lg-3, .card-row > div.col-md-3,
+    .card-row > div.col-sm-3, .card-row > div.col-xs-3 {
+        width: 24%
+    }
+
+    .card-row > div.col-lg-2, .card-row > div.col-md-2,
+    .card-row > div.col-sm-2, .card-row > div.col-xs-2 {
+        width: 15.666666667%
+    }
+
+    .card-row > div.col-lg-1, .card-row > div.col-md-1,
+    .card-row > div.col-sm-1, .card-row > div.col-xs-1 {
+        width: 7.333333333%
+    }
+
 }
