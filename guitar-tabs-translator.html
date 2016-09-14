@@ -29,16 +29,15 @@
                 </div>
             </section>
         </header>
-        <div class="content-wrap">
-            <div class="container">
+        <div class="content-wrap" data-ng-app="app-guitartabstranslator">
+            <div class="container" data-ng-controller="guitarTabsTranslatorController as vm">
                 <form class="form" novalidate name="tabsTranslatorForm">
                     <div class="row card-row nopadding">
                         <div class="col-sm-12 col-md-5 col-lg-6 fill-card">
                             <div class="row nopadding">
                                 <div class="col-md-2 block-color03 nopadding">
                                     <ul>
-                                        <li>Guitar</li>
-                                        <li>Bass</li>
+                                        <li data-ng-repeat="option in vm.firstCard.options">{{option.name}}</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-10 nopadding">
@@ -49,7 +48,7 @@
                         <div class="col-sm-12 col-md-2 col-lg-1 accent-color01 fill-card">
                             <div class="row nopadding">
                                 <div class="col-xs-6 col-md-12 text-center">
-                                    <a href="#">
+                                    <a href="#" data-ng-click="vm.switchCards()" >
                                         <i class="material-icons md-light md-48 hidden-xs hidden-sm visible-md-inline visible-lg-inline">swap_horiz</i>
                                         <i class="material-icons md-light md-48 visible-xs-inline visible-sm-inline hidden-md hidden-lg">swap_vert</i>
                                     </a>
@@ -60,8 +59,7 @@
                             <div class="row nopadding">
                                 <div class="col-md-2 block-color03 nopadding">
                                     <ul>
-                                        <li>Trebble</li>
-                                        <li>Bass</li>
+                                        <li data-ng-repeat="option in vm.secondCard.options">{{option.name}}</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-10 nopadding">
@@ -89,5 +87,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="./js/app-guitartabstranslator.js"></script>
+    <script type="text/javascript" src="./js/guitartabstranslatorController.js"></script>
     </body>
 </html>
