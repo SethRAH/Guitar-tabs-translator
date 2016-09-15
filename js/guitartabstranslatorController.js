@@ -9,10 +9,26 @@
         vm.firstCard = {
             "cardType": "tabsCard",
             "selectedOption": "Guitar",
-            "options": [
-                { "name": "Guitar"},
-                { "name": "Bass"}
-            ]
+            "options": [{ 
+                "name": "Guitar",
+                "selectedOption": "Standard",
+                "options": [
+                    { "name": "Standard" },
+                    { "name": "Drop D" },
+                    { "name": "Open D"},
+                    { "name": "Open C"},
+                    { "name": "Open G"},
+                    { "name": "Custom"}
+                ]               
+            }, { 
+                "name": "Bass",
+                "selectedOption": "Standard",
+                "options": [
+                    { "name": "Standard" },
+                    { "name": "Dropped D" },
+                    { "name": "Custom" }
+                ]
+            }]
         };
 
         vm.secondCard = {
@@ -27,6 +43,10 @@
         vm.selectPrimaryOption = function(card, option){
             card["selectedOption"] = option;
         };
+
+        vm.selectSecondaryOption = function(primaryOption, secondaryOption){
+            primaryOption["selectedOption"] = secondaryOption;
+        }
 
         vm.switchCards = function(){
             var tempCard = vm.firstCard;

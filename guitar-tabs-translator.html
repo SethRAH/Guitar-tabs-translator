@@ -42,7 +42,14 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-10 nopadding">
+                                <div class="col-md-2 block-color03 nopadding">
+                                    <ul data-ng-repeat="option in vm.firstCard.options" data-ng-show="vm.firstCard.selectedOption == option.name">
+                                        <li data-ng-repeat="secondOption in option.options" data-ng-class="{'bg-darken-03': option.selectedOption == secondOption.name}">
+                                            <a data-ng-click="vm.selectSecondaryOption(option,secondOption.name)">{{secondOption.name}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-8 nopadding">
 
                                 </div>
                             </div>
@@ -63,6 +70,13 @@
                                     <ul>
                                         <li data-ng-repeat="option in vm.secondCard.options" data-ng-class="{'bg-darken-03': vm.secondCard.selectedOption == option.name}">
                                             <a data-ng-click="vm.selectPrimaryOption(vm.secondCard,option.name)">{{option.name}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-2 block-color03 nopadding">
+                                    <ul data-ng-repeat="option in vm.secondCard.options" data-ng-show="vm.secondCard.selectedOption == option.name">
+                                        <li data-ng-repeat="secondOption in option.options" data-ng-class="{'bg-darken-03': option.selectedOption == secondOption.name}">
+                                            <a data-ng-click="vm.selectSecondaryOption(option,secondOption.name)">{{secondOption.name}}</a>
                                         </li>
                                     </ul>
                                 </div>
