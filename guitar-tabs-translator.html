@@ -34,23 +34,110 @@
                 <form class="form" novalidate name="tabsTranslatorForm">
                     <div class="row card-row nopadding">
                         <div class="col-sm-12 col-md-5 col-lg-6 fill-card">
-                            <div class="row nopadding">
-                                <div class="col-md-2 block-color03 nopadding">
-                                    <ul>
-                                        <li data-ng-repeat="option in vm.firstCard.options" data-ng-class="{'bg-darken-03': vm.firstCard.selectedOption == option.name}">
-                                            <a data-ng-click="vm.selectPrimaryOption(vm.firstCard,option.name)">{{option.name}}</a>
+                            <div class="row nopadding block-color03">
+                                <div class="col-md-12 block-color03 nopadding">
+                                    <ul class="row nopadding">
+                                        <li class="col-md-3 text-center" data-ng-repeat="option in vm.firstCard.options" data-ng-class="{'bg-darken-01': vm.firstCard.selectedOption == option.name}">
+                                            <a class="font-accent" data-ng-click="vm.selectPrimaryOption(vm.firstCard,option.name)">{{option.name}}</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-2 block-color03 nopadding">
-                                    <ul data-ng-repeat="option in vm.firstCard.options" data-ng-show="vm.firstCard.selectedOption == option.name">
-                                        <li data-ng-repeat="secondOption in option.options" data-ng-class="{'bg-darken-03': option.selectedOption == secondOption.name}">
+                                <div class="col-md-12 block-color03 nopadding">
+                                    <ul class="row nopadding" data-ng-repeat="option in vm.firstCard.options" data-ng-show="vm.firstCard.selectedOption == option.name">
+                                        <li class="col-md-3 nopadding text-center" data-ng-repeat="secondOption in option.options" data-ng-class="{'bg-darken-01': option.selectedOption == secondOption.name}">
                                             <a data-ng-click="vm.selectSecondaryOption(option,secondOption.name)">{{secondOption.name}}</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-8 nopadding">
-
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-md-12 ">
+                                    <div class="padding-30">
+                                        <div class="row nopadding">
+                                            <div class="col-xs-3">
+                                                <label>E4</label>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <span>--------</span>
+                                            </div>
+                                            <div class="col-xs-3 text-left">
+                                                <input class="form-control" type="text" maxlength="2"> </input>
+                                            </div>                                            
+                                            <div class="col-xs-3">
+                                                <span>--------</span>
+                                            </div>
+                                        </div>
+                                        <div class="row nopadding">
+                                            <div class="col-xs-3">
+                                                <label>B3</label>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <span>--------</span>
+                                            </div>
+                                            <div class="col-xs-3 text-left">
+                                                <input class="form-control" type="text" maxlength="2"> </input>
+                                            </div>                                            
+                                            <div class="col-xs-3">
+                                                <span>--------</span>
+                                            </div>
+                                        </div>
+                                        <div class="row nopadding">
+                                            <div class="col-xs-3">
+                                                <label>G3</label>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <span>--------</span>
+                                            </div>
+                                            <div class="col-xs-3 text-left">
+                                                <input class="form-control" type="text" maxlength="2"> </input>
+                                            </div>                                            
+                                            <div class="col-xs-3">
+                                                <span>--------</span>
+                                            </div>
+                                        </div>
+                                        <div class="row nopadding">
+                                            <div class="col-xs-3">
+                                                <label>D3</label>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <span>--------</span>
+                                            </div>
+                                            <div class="col-xs-3 text-left">
+                                                <input class="form-control" type="text" maxlength="2"> </input>
+                                            </div>                                            
+                                            <div class="col-xs-3">
+                                                <span>--------</span>
+                                            </div>
+                                        </div>
+                                        <div class="row nopadding">
+                                            <div class="col-xs-3">
+                                                <label>A2</label>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <span>--------</span>
+                                            </div>
+                                            <div class="col-xs-3 text-left">
+                                                <input class="form-control" type="text" maxlength="2"> </input>
+                                            </div>                                            
+                                            <div class="col-xs-3">
+                                                <span>--------</span>
+                                            </div>
+                                        </div>
+                                        <div class="row nopadding">
+                                            <div class="col-xs-3">
+                                                <label>E2</label>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <span>--------</span>
+                                            </div>
+                                            <div class="col-xs-3 text-left">
+                                                <input class="form-control" type="text" maxlength="2"> </input>
+                                            </div>                                            
+                                            <div class="col-xs-3">
+                                                <span>--------</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -65,22 +152,24 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-5 fill-card">
-                            <div class="row nopadding">
-                                <div class="col-md-2 block-color03 nopadding">
-                                    <ul>
-                                        <li data-ng-repeat="option in vm.secondCard.options" data-ng-class="{'bg-darken-03': vm.secondCard.selectedOption == option.name}">
-                                            <a data-ng-click="vm.selectPrimaryOption(vm.secondCard,option.name)">{{option.name}}</a>
+                            <div class="row nopadding block-color-03">
+                                <div class="col-md-12 block-color03 nopadding">
+                                    <ul class="row nopadding">
+                                        <li class="col-md-3 nopadding text-center" data-ng-repeat="option in vm.secondCard.options" data-ng-class="{'bg-darken-01': vm.secondCard.selectedOption == option.name}">
+                                            <a class="font-accent" data-ng-click="vm.selectPrimaryOption(vm.secondCard,option.name)">{{option.name}}</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-2 block-color03 nopadding">
-                                    <ul data-ng-repeat="option in vm.secondCard.options" data-ng-show="vm.secondCard.selectedOption == option.name">
-                                        <li data-ng-repeat="secondOption in option.options" data-ng-class="{'bg-darken-03': option.selectedOption == secondOption.name}">
+                                <div class="col-md-12 block-color03 nopadding">
+                                    <ul class="row nopadding" data-ng-repeat="option in vm.secondCard.options" data-ng-show="vm.secondCard.selectedOption == option.name">
+                                        <li class="col-md-3 nopadding text-center" data-ng-repeat="secondOption in option.options" data-ng-class="{'bg-darken-01': option.selectedOption == secondOption.name}">
                                             <a data-ng-click="vm.selectSecondaryOption(option,secondOption.name)">{{secondOption.name}}</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-10 nopadding">
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-md-12 nopadding">
 
                                 </div>
                             </div>
