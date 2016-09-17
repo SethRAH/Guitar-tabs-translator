@@ -53,86 +53,16 @@
                             <div class="row nopadding">
                                 <div class="col-md-12 ">
                                     <div class="padding-30">
-                                        <div class="row nopadding">
+                                        <div class="row nopadding" data-ng-repeat="string in vm.firstCard.getSelectedOption().getSelectedOption().strings">
                                             <div class="col-xs-3">
-                                                <label>E4</label>
+                                                <label>{{string.letter}}{{string.octave}}</label>
                                             </div>
-                                            <div class="col-xs-3 text-right">
-                                                <span>--------</span>
-                                            </div>
-                                            <div class="col-xs-3 text-left">
-                                                <input class="form-control" type="text" maxlength="2"> </input>
-                                            </div>                                            
                                             <div class="col-xs-3">
                                                 <span>--------</span>
                                             </div>
-                                        </div>
-                                        <div class="row nopadding">
                                             <div class="col-xs-3">
-                                                <label>B3</label>
+                                                <input class="form-control" type="text" maxlength="2"></input>
                                             </div>
-                                            <div class="col-xs-3 text-right">
-                                                <span>--------</span>
-                                            </div>
-                                            <div class="col-xs-3 text-left">
-                                                <input class="form-control" type="text" maxlength="2"> </input>
-                                            </div>                                            
-                                            <div class="col-xs-3">
-                                                <span>--------</span>
-                                            </div>
-                                        </div>
-                                        <div class="row nopadding">
-                                            <div class="col-xs-3">
-                                                <label>G3</label>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <span>--------</span>
-                                            </div>
-                                            <div class="col-xs-3 text-left">
-                                                <input class="form-control" type="text" maxlength="2"> </input>
-                                            </div>                                            
-                                            <div class="col-xs-3">
-                                                <span>--------</span>
-                                            </div>
-                                        </div>
-                                        <div class="row nopadding">
-                                            <div class="col-xs-3">
-                                                <label>D3</label>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <span>--------</span>
-                                            </div>
-                                            <div class="col-xs-3 text-left">
-                                                <input class="form-control" type="text" maxlength="2"> </input>
-                                            </div>                                            
-                                            <div class="col-xs-3">
-                                                <span>--------</span>
-                                            </div>
-                                        </div>
-                                        <div class="row nopadding">
-                                            <div class="col-xs-3">
-                                                <label>A2</label>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <span>--------</span>
-                                            </div>
-                                            <div class="col-xs-3 text-left">
-                                                <input class="form-control" type="text" maxlength="2"> </input>
-                                            </div>                                            
-                                            <div class="col-xs-3">
-                                                <span>--------</span>
-                                            </div>
-                                        </div>
-                                        <div class="row nopadding">
-                                            <div class="col-xs-3">
-                                                <label>E2</label>
-                                            </div>
-                                            <div class="col-xs-3 text-right">
-                                                <span>--------</span>
-                                            </div>
-                                            <div class="col-xs-3 text-left">
-                                                <input class="form-control" type="text" maxlength="2"> </input>
-                                            </div>                                            
                                             <div class="col-xs-3">
                                                 <span>--------</span>
                                             </div>
@@ -191,6 +121,7 @@
             </div>
         </footer>
     <!-- Javascript Section -->
+    <script type="text/javascript" src="./js/easyArray.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
