@@ -9,6 +9,17 @@
         vm.firstCard = {
             "cardType": "tabsCard",
             "selectedOption": "Guitar",
+            "getSelectedScientificPitches": function(){
+                var selPrimOption = this.getSelectedOption();
+                var selSecOption = selPrimOption.getSelectedOption();
+                var filledOutStrings = easyArray.filter(selSecOption.strings, function(string){ return string.fret != null && string.fret.length > 0;});
+                var notes = easyArray.map(filledOutStrings, function(string){
+                    var baseNoteNumber = musicUtility.convertScientificPitchNameToNumber(string.letter, string.octave);
+                    var playedNoteNumber = baseNoteNumber + parseInt(string.fret);
+                    return musicUtility.convertScientificPitchNumberToName(playedNoteNumber);
+                });
+                return notes;
+            },
             "getSelectedOption": function(){
                 var result = {};
                 var primaryOption = this;
@@ -34,62 +45,62 @@
                     { 
                         "name": "Standard", 
                         "strings": [
-                            {"letter": "E", "octave": "4"},
-                            {"letter": "B", "octave": "3"},
-                            {"letter": "G", "octave": "3"},
-                            {"letter": "D", "octave": "3"},
-                            {"letter": "A", "octave": "2"},
-                            {"letter": "E", "octave": "2"}
+                            {"letter": "E", "octave": "4", "fret": null},
+                            {"letter": "B", "octave": "3", "fret": null},
+                            {"letter": "G", "octave": "3", "fret": null},
+                            {"letter": "D", "octave": "3", "fret": null},
+                            {"letter": "A", "octave": "2", "fret": null},
+                            {"letter": "E", "octave": "2", "fret": null}
                         ]
                     },
                     { "name": "Drop D" , 
                         "strings": [
-                            {"letter": "E", "octave": "4"},
-                            {"letter": "B", "octave": "3"},
-                            {"letter": "G", "octave": "3"},
-                            {"letter": "D", "octave": "3"},
-                            {"letter": "A", "octave": "2"},
-                            {"letter": "D", "octave": "2"}
+                            {"letter": "E", "octave": "4", "fret": null},
+                            {"letter": "B", "octave": "3", "fret": null},
+                            {"letter": "G", "octave": "3", "fret": null},
+                            {"letter": "D", "octave": "3", "fret": null},
+                            {"letter": "A", "octave": "2", "fret": null},
+                            {"letter": "D", "octave": "2", "fret": null}
                         ]
                     },
                     { "name": "Open D" , 
                         "strings": [
-                            {"letter": "D", "octave": "4"},
-                            {"letter": "A", "octave": "3"},
-                            {"letter": "F#", "octave": "3"},
-                            {"letter": "D", "octave": "3"},
-                            {"letter": "A", "octave": "2"},
-                            {"letter": "D", "octave": "2"}
+                            {"letter": "D", "octave": "4", "fret": null},
+                            {"letter": "A", "octave": "3", "fret": null},
+                            {"letter": "F#", "octave": "3", "fret": null},
+                            {"letter": "D", "octave": "3", "fret": null},
+                            {"letter": "A", "octave": "2", "fret": null},
+                            {"letter": "D", "octave": "2", "fret": null}
                         ]
                     },
                     { "name": "Open C", 
                         "strings": [
-                            {"letter": "G", "octave": "4"},
-                            {"letter": "E", "octave": "4"},
-                            {"letter": "C", "octave": "4"},
-                            {"letter": "G", "octave": "3"},
-                            {"letter": "E", "octave": "3"},
-                            {"letter": "C", "octave": "3"}
+                            {"letter": "G", "octave": "4", "fret": null},
+                            {"letter": "E", "octave": "4", "fret": null},
+                            {"letter": "C", "octave": "4", "fret": null},
+                            {"letter": "G", "octave": "3", "fret": null},
+                            {"letter": "E", "octave": "3", "fret": null},
+                            {"letter": "C", "octave": "3", "fret": null}
                         ]
                     },
                     { "name": "Open G", 
                         "strings": [
-                            {"letter": "D", "octave": "4"},
-                            {"letter": "B", "octave": "3"},
-                            {"letter": "G", "octave": "3"},
-                            {"letter": "D", "octave": "3"},
-                            {"letter": "G", "octave": "2"},
-                            {"letter": "D", "octave": "2"}
+                            {"letter": "D", "octave": "4", "fret": null},
+                            {"letter": "B", "octave": "3", "fret": null},
+                            {"letter": "G", "octave": "3", "fret": null},
+                            {"letter": "D", "octave": "3", "fret": null},
+                            {"letter": "G", "octave": "2", "fret": null},
+                            {"letter": "D", "octave": "2", "fret": null}
                         ]
                     },
                     { "name": "Custom", 
                         "strings": [
-                            {"letter": "E", "octave": "4"},
-                            {"letter": "B", "octave": "3"},
-                            {"letter": "G", "octave": "3"},
-                            {"letter": "D", "octave": "3"},
-                            {"letter": "A", "octave": "2"},
-                            {"letter": "E", "octave": "2"}
+                            {"letter": "E", "octave": "4", "fret": null},
+                            {"letter": "B", "octave": "3", "fret": null},
+                            {"letter": "G", "octave": "3", "fret": null},
+                            {"letter": "D", "octave": "3", "fret": null},
+                            {"letter": "A", "octave": "2", "fret": null},
+                            {"letter": "E", "octave": "2", "fret": null}
                         ]
                     }
                 ]               
@@ -108,26 +119,26 @@
                 "options": [
                     { "name": "Standard" , 
                         "strings": [
-                            {"letter": "G", "octave": "2"},
-                            {"letter": "D", "octave": "2"},
-                            {"letter": "A", "octave": "1"},
-                            {"letter": "E", "octave": "1"}
+                            {"letter": "G", "octave": "2", "fret": null},
+                            {"letter": "D", "octave": "2", "fret": null},
+                            {"letter": "A", "octave": "1", "fret": null},
+                            {"letter": "E", "octave": "1", "fret": null}
                         ]
                     },
                     { "name": "Dropped D" , 
                         "strings": [
-                            {"letter": "G", "octave": "2"},
-                            {"letter": "D", "octave": "2"},
-                            {"letter": "A", "octave": "1"},
-                            {"letter": "D", "octave": "1"}
+                            {"letter": "G", "octave": "2", "fret": null},
+                            {"letter": "D", "octave": "2", "fret": null},
+                            {"letter": "A", "octave": "1", "fret": null},
+                            {"letter": "D", "octave": "1", "fret": null}
                         ]
                     },
                     { "name": "Custom" , 
                         "strings": [
-                            {"letter": "G", "octave": "2"},
-                            {"letter": "D", "octave": "2"},
-                            {"letter": "A", "octave": "1"},
-                            {"letter": "E", "octave": "1"}
+                            {"letter": "G", "octave": "2", "fret": null},
+                            {"letter": "D", "octave": "2", "fret": null},
+                            {"letter": "A", "octave": "1", "fret": null},
+                            {"letter": "E", "octave": "1", "fret": null}
                         ]
                     },
                 ]
@@ -135,6 +146,18 @@
         };
 
         vm.secondCard = {
+            "cardType": "scientiicPitchNotationCard",
+            "selectedOption": "Scientific Pitch Notation",
+            "updateModel": function(){
+                this.pitches = vm.firstCard.getSelectedScientificPitches();
+            },
+            "pitches": [],
+            "options": [
+                {"name": "Scientific Pitch Notation"}
+            ]
+        };
+
+        vm.notUsedCard = {
             "cardType": "scoreCard",
             "selectedOption": "Trebble",
             "options": [

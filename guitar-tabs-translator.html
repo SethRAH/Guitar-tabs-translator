@@ -61,7 +61,7 @@
                                                 <span>--------</span>
                                             </div>
                                             <div class="col-xs-3">
-                                                <input class="form-control" type="text" maxlength="2"></input>
+                                                <input class="form-control" type="text" maxlength="2" placeholder="--------" data-ng-model="string.fret" data-ng-change="vm.secondCard.updateModel()"></input>
                                             </div>
                                             <div class="col-xs-3">
                                                 <span>--------</span>
@@ -99,8 +99,14 @@
                                 </div>
                             </div>
                             <div class="row nopadding">
-                                <div class="col-md-12 nopadding">
-
+                                <div class="col-md-12 ">
+                                    <div class="padding-30">
+                                        <div class="row nopadding" data-ng-repeat="pitch in vm.secondCard.pitches">
+                                            <div class="col-xs-12">
+                                                <label>{{pitch.letter}}{{pitch.octave}}</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -122,6 +128,7 @@
         </footer>
     <!-- Javascript Section -->
     <script type="text/javascript" src="./js/easyArray.js"></script>
+    <script type="text/javascript" src="./js/musicUtility.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
