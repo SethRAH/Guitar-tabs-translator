@@ -1,0 +1,15 @@
+<div class="row card-row nopadding">
+    <div class="col-xs-12 fill-card">
+        <div class="padding-30">
+            <div class="row nopadding">
+                <div class="col-md-12 nopadding">
+                    <div *ngFor="let note of sciPitchNotes" class="row nopadding">
+                        <div class="col-xs-12 text-center text-lg">
+                            {{note.letter}}{{note.octave}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
