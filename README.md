@@ -21,6 +21,6 @@ following command: `npm install` this will go through and install any node modul
 If the "typings" folder doesn't show up you'll need to manually install it with the following command: `npm run typings install`
 
 You should only have to run the above the first time you want to run the app unless you make modifications to package.json. The next step is to run the lite server that does the
-TypeScript compilation so you'll want this running whenever you want to run the app. In the app root folder, run the following command: `npm start'. Now if you make a change to a
+TypeScript compilation so you'll want this running whenever you want to run the app. In the app root folder, run the following command: `npm start`. Now if you make a change to a
 `*.ts` file and save it, you should see the changes replicate to the associated `*.js` and `*.js.map` files. Also, since we have browserfy, if you have the app running while you 
 make changes, any change to the app files should cause the app to refresh with the newest source.
