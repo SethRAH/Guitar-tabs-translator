@@ -90,8 +90,12 @@ input.form-control {
     margin: 0 !important;
 }
 
-.padding-30, .padding-40, .padding-50, .padding-60 {
+.padding-10, .padding-30, .padding-40, .padding-50, .padding-60 {
     overflow: hidden;
+}
+
+.padding-10 {
+    padding: 5px 10px 8px 10px
 }
 
 .padding-30 {
@@ -120,6 +124,10 @@ input.form-control {
 
 .block-color01 {
     background-color: #FFC107;
+}
+
+.block-color01-light {
+    background-color: #FFD54F;
 }
 
 .block-color02 {

@@ -1,0 +1,9 @@
+
+<ul class="nopadding">
+    <li *ngFor="let option of componentOptions" class="card-tab block-color01 padding-10" [class.block-color01-light]="option !== selectedComponent"
+        (click)="selectComponent(option)">
+        {{option.name}}
+    </li>
+</ul>
+<guitar-tablature-input *ngIf="selectedComponent.name === 'Guitar Tablature'"></guitar-tablature-input>
+<scientific-notation-input *ngIf="selectedComponent.name === 'Scientific Pitch Notation'"></scientific-notation-input>

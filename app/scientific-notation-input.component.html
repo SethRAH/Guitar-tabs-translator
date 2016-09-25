@@ -1,0 +1,24 @@
+<div class="row card-row nopadding">
+    <div class="col-xs-12 fill-card zero-gutter fit-head">
+        <div class="padding-30">
+            <div class="row nopadding">
+                <div class="col-md-12 nopadding">
+                    <div *ngFor="let note of sciPitchNotes" class="row nopadding">
+                        <div class="col-md-2 col-xs-4 text-lg">
+                            <input type="text" [(ngModel)]="note.letter" class="form-control" placeholder="letter" (change)="setPitches()">
+                        </div>
+                        <div class="col-md-2 col-xs-4 text-lg">
+                            <input type="number" [(ngModel)]="note.octave" class="form-control" placeholder="octave" (change)="setPitches()" >
+                        </div>
+                        <div class="col-md-2 col-xs-4 text-lg">
+                            <span class="material-icons" (click)="remove(note)">remove</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="material-icons" (click)="addInput()">add</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

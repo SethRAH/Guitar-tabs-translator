@@ -1,16 +1,16 @@
 <div class="row card-row nopadding">
-    <div class="col-xs-12 fill-card">
-        <div class="row nopadding block-color03">
+    <div class="col-xs-12 fill-card zero-gutter fit-head">
+        <div class="row nopadding block-color01">
             <div class="col-md-12 nopadding">
                 <ul class="row nopadding">
-                    <li *ngFor="let guitar of guitars" class="col-xs-2 col-md-1 font-accent" [class.bg-darken-03]="guitar === selectedGuitar"
+                    <li *ngFor="let guitar of guitars" class="col-xs-2 col-md-1 font-accent" [class.bg-darken-01]="guitar === selectedGuitar"
                         (click)="selectGuitar(guitar)">
                         {{guitar.name}}
                     </li>
                 </ul>
                 <ul *ngIf="selectedGuitar" class="row nopadding">
                     <li *ngFor = "let tuning of selectedGuitar.tunings" class="col-xs-3 col-md-1"
-                        [class.bg-darken-03]="tuning === selectedTuning" (click)="selectTuning(tuning)">
+                        [class.bg-darken-01]="tuning === selectedTuning" (click)="selectTuning(tuning)">
                         {{tuning.name}}
                     </li>
                 </ul>

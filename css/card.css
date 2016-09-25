@@ -1,3 +1,29 @@
+.card-tab {
+    position: relative;
+    display: block;
+    float: left;
+    margin-bottom: -1px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.zero-gutter {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.fit-head {
+    margin-top: 0 !important;
+}
+
+.card-tab:first-child {
+    margin-left: 0;
+}
+
+.card-tab:last-child {
+    margin-right: 0;
+}
+
 .card-row > div.col-lg-1.fill-card, .card-row > div.col-lg-2.fill-card,
 .card-row > div.col-lg-3.fill-card, .card-row > div.col-lg-4.fill-card,
 .card-row > div.col-lg-5.fill-card, .card-row > div.col-lg-6.fill-card,
