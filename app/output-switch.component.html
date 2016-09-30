@@ -1,0 +1,8 @@
+
+<ul class="nopadding">
+    <li *ngFor="let option of componentOptions" class="card-tab block-color01 padding-10" [class.block-color01-light]="option !== selectedComponent"
+        (click)="selectComponent(option)">
+        {{option.name}}
+    </li>
+</ul>
+<scientific-notation-output *ngIf="selectedComponent.name === 'Scientific Pitch Notation'"></scientific-notation-output>
