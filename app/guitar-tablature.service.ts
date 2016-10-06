@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/observable';
+import { Subject } from 'rxjs/subject';
 
 import { ScientificPitchNotation } from './classes/scientificPitchNotation';
 import { GuitarString } from './classes/guitarString';
@@ -118,6 +120,7 @@ const GUITARS: Guitar[] = [
 export class GuitarTablatureService {
 
     guitars = GUITARS;
+    maxFrets = 19;
 
     constructor(private musicNotesService: MusicNotationService ) {};
 
@@ -136,6 +139,10 @@ export class GuitarTablatureService {
     
     getGuitarOptions(): Promise<Guitar[]>{
         return Promise.resolve(this.guitars);
+    };
+
+    getTabsObservable(guitarTuning:GuitarTuning): Observable<GuitarTuning[]> {
+        return this.musicNotesService.getScientificPitchSubject().map(pitches => this.getFingerings(guitarTuning, pitches));
     };
 
     private convertSciPitchNotationToNumber(sciPitch: ScientificPitchNotation): number {
@@ -273,4 +280,124 @@ export class GuitarTablatureService {
         baseNote = baseNote + (12 * (guitarString.baseTuning.octave));
         return baseNote + guitarString.fret;
     };
+
+    private getFingerings(tuning: GuitarTuning, desiredNotes: ScientificPitchNotation[]): GuitarTuning[]{
+        let noteTuning = desiredNotes.map(function(note){return {note: note, tuning: tuning}});
+
+        let noteOptions = noteTuning.map(itm => this.getFingeringPossibilitiesOnNote(itm));
+
+        let result: GuitarTuning[] = new Array<GuitarTuning>();
+
+        //permute the options to get a list of raw guitar tunings, each tuning plays each note once (although they may be impossible fingerings at this point)
+        let rawPossibleOptions:number = 1;
+        let indexSelection = new Array<number>();
+        for(var i = 0; i < noteOptions.length; i++){ 
+            rawPossibleOptions = rawPossibleOptions * noteOptions[i].possibilities.length; 
+            indexSelection.push(0); 
+        }
+        for(var i = 0; i < rawPossibleOptions; i++){ 
+            let tempTuning = new GuitarTuning();
+            tempTuning.strings = new Array<GuitarString>();
+            result.push(tempTuning); 
+        }
+
+        for(var i = 0; i < rawPossibleOptions; i++){
+            //push current index selection
+            for(var j = 0; j < indexSelection.length; j++){
+                result[i].strings.push(noteOptions[j].possibilities[indexSelection[j]]);
+            }
+
+            if( i < (rawPossibleOptions - 1)){
+                //increment index selection
+                // // Find lowest unwrapping indexSelection index and increment
+                let lowestWrapper = noteOptions.length - 1;
+                let lowestIndexFound = false;
+                for(var j = lowestWrapper; j >= 0 && !lowestIndexFound; j--){
+                    if(indexSelection[j] < (noteOptions[j].possibilities.length - 1)){
+                        lowestIndexFound = true;
+                        lowestWrapper = j;
+                        indexSelection[j]++;
+                    }
+                }
+                // // reset all lower sig fig indexes (higher indexes than the incrementing one)
+                for(var j = lowestWrapper + 1; j < noteOptions.length; j++){
+                    indexSelection[j] = 0;
+                }
+            }
+        }
+
+        //filter out impossible guitar tunings
+        result = result.filter(function(judgedTuning){
+            let isGood = true;
+            
+            let usedStringPaintArray = tuning.strings.map(function(guitarString){
+                return {baseNote: guitarString.baseTuning, allocated: false};
+            });
+
+            judgedTuning.strings.forEach(function(guitarString){
+                if(usedStringPaintArray.filter((a)=>a.baseNote === guitarString.baseTuning && a.allocated === false).length > 0){
+                    var found = false;
+                    for(var i = 0; i < usedStringPaintArray.length && !found; i++){
+                        if(!usedStringPaintArray[i].allocated && usedStringPaintArray[i].baseNote === guitarString.baseTuning){
+                            usedStringPaintArray[i].allocated = true;
+                            found = true;
+                        }
+                    }
+                }else{
+                    isGood = false;
+                }
+            });
+
+            return isGood;
+        });
+
+        return result;
+    }
+
+    private getFingeringPossibilitiesOnNote(noteTuning){
+        let note: ScientificPitchNotation = noteTuning.note;
+        let tuning: GuitarTuning = noteTuning.tuning;
+        let possibilities = this.findPitchOnTuning(tuning, note);
+        return {note: note, possibilities: possibilities };
+    }
+
+    private findPitchOnTuning(tuning:GuitarTuning, desiredNote: ScientificPitchNotation): GuitarString[]{
+        if(tuning !== null){
+            let stringNotes = tuning.strings.map(function(guitarString){ return {guitarString: guitarString, sciPitch: desiredNote} });
+
+            return stringNotes.map(itm => this.findPitchForStringNote(itm))
+                            .filter(function(guitarString){return guitarString.fret !== null;});
+        }
+        else {
+            return null;
+        }
+    }
+
+    private findPitchForStringNote(stringNote){
+        let guitarString = stringNote.guitarString;
+        let sciPitch = stringNote.sciPitch;
+        return this.findPitchOnString(guitarString, sciPitch);
+    }
+
+    private findPitchOnString(guitarString: GuitarString, sciPitch: ScientificPitchNotation): GuitarString {
+        let baseString = new GuitarString();
+        baseString.baseTuning = guitarString.baseTuning;
+        baseString.fret = 0;
+
+        let minStringNote = this.convertStringToResolvedPitchNumber(baseString);
+        let maxStringNote = minStringNote + this.maxFrets;
+
+        let desiredNote = this.convertSciPitchNotationToNumber(sciPitch);
+
+        // note can't be played on this string. Return a string with the same tuning but with a null fret to indicate this
+        if(desiredNote < minStringNote || desiredNote > maxStringNote){
+            baseString.fret = null;
+            return baseString;
+        }
+        else{
+            let fret = desiredNote - minStringNote;
+            baseString.fret = fret;
+            return baseString;
+        }
+    }
 }

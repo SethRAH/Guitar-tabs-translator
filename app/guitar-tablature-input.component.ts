@@ -24,7 +24,9 @@ export class GuitarTablatureInputComponent implements OnInit {
 
     getGuitars(): void {
         this.guitarTablatureService.getGuitarOptions()
-            .then(guitars => this.guitars = guitars);
+            .then(guitars => this.guitars = guitars)
+            .then(()=> this.selectGuitar(this.guitars[0]))
+            .then(()=> this.selectTuning(this.selectedGuitar.tunings[0]));
     }
 
     selectGuitar(selectedGuitar: Guitar): void{

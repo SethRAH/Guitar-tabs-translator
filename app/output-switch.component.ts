@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ComponentOption } from './classes/componentOption';
 
 const outputComponents = [
-    {name: 'Scientific Pitch Notation'}
+    {name: 'Scientific Pitch Notation'},
+    {name: 'Guitar Tablature'}
 ];
 
 @Component({

@@ -1,0 +1,43 @@
+<div class="row card-row nopadding">
+    <div class="col-xs-12 fill-card zero-gutter fit-head">
+        <div class="row nopadding block-color01">
+            <div class="col-md-12 nopadding">
+                <ul class="row nopadding">
+                    <li *ngFor="let guitar of guitars" class="col-xs-2 col-md-1 font-accent" [class.bg-darken-01]="guitar === selectedGuitar"
+                        (click)="selectGuitar(guitar)">
+                        {{guitar.name}}
+                    </li>
+                </ul>
+                <ul *ngIf="selectedGuitar" class="row nopadding">
+                    <li *ngFor = "let tuning of selectedGuitar.tunings" class="col-xs-3 col-md-1"
+                        [class.bg-darken-01]="tuning === selectedTuning" (click)="selectTuning(tuning)">
+                        {{tuning.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row nopadding">
+            <div class="col-xs-12">
+                <div class="padding-30">
+                    <div *ngIf="selectedTuning" class="nopadding">
+                        <div *ngFor="let fingering of fingeringOptions" class="row nopadding">
+                            <div class="col-xs-12">
+                                <div class="padding-30">
+                                    <div *ngFor="let string of fingering.strings" class="row nopadding">
+                                        <div class="col-xs-2 col-md-1">
+                                            <label>{{string.baseTuning.letter}}{{string.baseTuning.octave}}</label>
+                                        </div>
+                                        <div class="col-xs-10 col-md-11">
+                                            <label>------{{string.fret}}------</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
