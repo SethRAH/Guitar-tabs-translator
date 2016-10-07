@@ -23,26 +23,28 @@ export class GuitarTablatureOutputComponent implements OnInit {
 
     ngOnInit(){
         this.getGuitars();
-    }
+    };
 
     getGuitars(): void {
         this.guitarTabsService.getGuitarOptions()
             .then(guitars => this.guitars = guitars)
             .then(()=> this.selectGuitar(this.guitars[0]))
             .then(()=> this.selectTuning(this.selectedGuitar.tunings[0]))
-            .then(()=>this.guitarTabsService.getTabsObservable(this.selectedTuning).subscribe(data => this.fingeringOptions = data));
-    }
+            .then(()=>this.guitarTabsService.getTabsObservable(this.selectedTuning).subscribe(data => this.fingeringOptions = data))
+            .then(()=>this.guitarTabsService.resendTabs());
+    };
 
     selectGuitar(guitar: Guitar): void {
         this.selectedGuitar = guitar;
         this.selectedTuning = this.selectedGuitar.selectedTuning;
         this.guitarTabsService.getTabsObservable(this.selectedTuning).subscribe(data => this.fingeringOptions = data);
-    }
+        this.guitarTabsService.resendTabs();
+    };
 
     selectTuning(selectedTuning: GuitarTuning): void{
         this.selectedGuitar.selectedTuning = selectedTuning;
         this.selectedTuning = selectedTuning; 
         this.guitarTabsService.getTabsObservable(this.selectedTuning).subscribe(data => this.fingeringOptions = data);     
-    }
-
+        this.guitarTabsService.resendTabs();
+    };
 }

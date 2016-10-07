@@ -19,5 +19,6 @@ export class ScientificNotationOutputComponent implements OnInit {
     ngOnInit(){
         this.scientificNotationService.getScientificPitchNotationsSubject()
                                                     .subscribe(data => this.sciPitchNotes = data);
+        this.scientificNotationService.resendScientificPitchNotations();
     }
 }

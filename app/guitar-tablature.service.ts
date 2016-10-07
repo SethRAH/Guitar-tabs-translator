@@ -145,6 +145,10 @@ export class GuitarTablatureService {
         return this.musicNotesService.getScientificPitchSubject().map(pitches => this.getFingerings(guitarTuning, pitches));
     };
 
+    resendTabs(): void{
+        this.musicNotesService.resendScientificPitch();
+    };
+
     private convertSciPitchNotationToNumber(sciPitch: ScientificPitchNotation): number {
         let chrom = 0;
         switch(sciPitch.letter){

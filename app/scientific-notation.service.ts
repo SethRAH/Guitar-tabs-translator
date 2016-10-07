@@ -11,7 +11,7 @@ export class ScientificNotationService {
 
     getScientificPitchNotations(): Promise<ScientificPitchNotation[]> {
         return this.musicNotationService.getScientificPitch();
-    }
+    };
 
     getScientificPitchNotationsSubject(): Subject<ScientificPitchNotation[]> {
         return this.musicNotationService.getScientificPitchSubject();
@@ -19,6 +19,10 @@ export class ScientificNotationService {
 
     setScientificPitchNotations(sciNoPitches: ScientificPitchNotation[]): Promise<ScientificPitchNotation[]>{
         return this.musicNotationService.setScientificPitch(sciNoPitches);
-    }
+    };
+
+    resendScientificPitchNotations(): void{
+        this.musicNotationService.resendScientificPitch();
+    };
 
 }

@@ -23,4 +23,8 @@ export class MusicNotationService {
         this.sciNotesSubject.next(this.sciNotes);
         return this.getScientificPitch();
     };
+
+    resendScientificPitch(): void{
+        this.sciNotesSubject.next(this.sciNotes);
+    };
 }
