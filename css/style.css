@@ -63,6 +63,9 @@ input.form-control {
     margin-top: 16px;
 }
 
+.text-tablature {
+    font-family: 'Share Tech Mono', monospace;
+}
 
 .boxed-container {
     display: block;

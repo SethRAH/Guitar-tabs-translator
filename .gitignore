@@ -4,3 +4,4 @@ app/*.js
 app/*.js.map
 app/classes/*.js
 app/classes/*.js.map
+.vscode/

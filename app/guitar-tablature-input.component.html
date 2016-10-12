@@ -22,10 +22,10 @@
                     <div *ngIf="selectedTuning" class="nopadding">
                         <div *ngFor="let string of selectedTuning.strings" class="row nopadding">
                             <div class="col-xs-2 col-md-1">
-                                <label>{{string.baseTuning.letter}}{{string.baseTuning.octave}}</label>
+                                <label class="text-tablature">{{string.baseTuning.letter}}{{string.baseTuning.octave}}</label>
                             </div>
                             <div class="col-xs-10 col-md-11">
-                                <input [(ngModel)]="string.fret" (change)="setTuning()" type="number" class="form-control" maxlength="2" placeholder="----------">
+                                <input [(ngModel)]="string.fret" (change)="setTuning()" type="number" class="form-control text-tablature" maxlength="2" placeholder="----------">
                             </div>
                         </div>
                     </div>
