@@ -22,7 +22,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "D", octave:3}, fret:null},
                     {baseTuning:{letter: "A", octave:2}, fret:null},
                     {baseTuning:{letter: "E", octave:2}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             },
             {
                 name: "Drop D",
@@ -33,7 +34,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "D", octave:3}, fret:null},
                     {baseTuning:{letter: "A", octave:2}, fret:null},
                     {baseTuning:{letter: "D", octave:2}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             },
             {
                 name: "Open D",
@@ -44,7 +46,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "D", octave:3}, fret:null},
                     {baseTuning:{letter: "A", octave:2}, fret:null},
                     {baseTuning:{letter: "D", octave:2}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             },
             {
                 name: "Open C",
@@ -55,7 +58,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "G", octave:3}, fret:null},
                     {baseTuning:{letter: "E", octave:3}, fret:null},
                     {baseTuning:{letter: "C", octave:3}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             },
             {
                 name: "Open G",
@@ -66,7 +70,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "D", octave:3}, fret:null},
                     {baseTuning:{letter: "G", octave:2}, fret:null},
                     {baseTuning:{letter: "D", octave:2}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             }
         ],
         selectedTuning: {
@@ -78,7 +83,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "D", octave:3}, fret:null},
                     {baseTuning:{letter: "A", octave:2}, fret:null},
                     {baseTuning:{letter: "E", octave:2}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             }
     },
     {
@@ -91,7 +97,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "D", octave:2}, fret:null},
                     {baseTuning:{letter: "A", octave:1}, fret:null},
                     {baseTuning:{letter: "E", octave:1}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             },
             {
                 name: "Drop D",
@@ -100,7 +107,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "D", octave:2}, fret:null},
                     {baseTuning:{letter: "A", octave:1}, fret:null},
                     {baseTuning:{letter: "D", octave:1}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             }
         ],
         selectedTuning: {
@@ -110,7 +118,8 @@ const GUITARS: Guitar[] = [
                     {baseTuning:{letter: "D", octave:2}, fret:null},
                     {baseTuning:{letter: "A", octave:1}, fret:null},
                     {baseTuning:{letter: "E", octave:1}, fret:null}
-                ]
+                ],
+                fingerSpreadMetric: null
             }
     }
 ];
@@ -375,7 +384,13 @@ export class GuitarTablatureService {
             })
 
             return filledTuning;
-        })
+        });
+
+        //Score based on finger spread
+        result = result.map(curTuning => this.scoreFingerSpread(curTuning));
+
+        //Sort based on finger spread score
+        result = result.sort(function(a, b){ return a.fingerSpreadMetric - b.fingerSpreadMetric});
 
         return result;
     }
@@ -425,5 +440,17 @@ export class GuitarTablatureService {
             baseString.fret = fret;
             return baseString;
         }
+    }
+
+    private scoreFingerSpread(tuning: GuitarTuning): GuitarTuning{
+        let score = 0;
+        let playedStrings = tuning.strings.filter(string => string.fret !== null && string.fret !== 0);
+        for(let i = 1; i < playedStrings.length; i++){
+            score += Math.abs(playedStrings[i-1].fret - playedStrings[i].fret);
+        }
+
+        let result = tuning;
+        result.fingerSpreadMetric = score;
+        return result;
     }
 }
