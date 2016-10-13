@@ -355,6 +355,28 @@ export class GuitarTablatureService {
             return isGood;
         });
 
+        //Map results on to current tuning (allows for correct ordering and for "non played" notes to be filled in)
+        result = result.map(function(validTuning){
+            let filledTuning:GuitarTuning = new GuitarTuning();
+            
+            filledTuning.name = tuning.name;
+
+            filledTuning.strings = tuning.strings.map(function(tString){
+                let coalescedString: GuitarString = new GuitarString();
+                coalescedString.baseTuning = tString.baseTuning;
+
+                if(validTuning.strings.findIndex(vString => vString.baseTuning == tString.baseTuning)>-1){
+                   coalescedString.fret = validTuning.strings.find(vString => vString.baseTuning == tString.baseTuning).fret;
+                }
+                else {
+                    coalescedString.fret = null;
+                }
+                return coalescedString;
+            })
+
+            return filledTuning;
+        })
+
         return result;
     }
 
