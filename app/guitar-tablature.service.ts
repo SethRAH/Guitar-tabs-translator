@@ -135,7 +135,7 @@ export class GuitarTablatureService {
 
     setGuitarStrings(guitarStrings: GuitarString[]): Promise<GuitarString[]> {
         //let resolvedNotes = guitarStrings.map(this.guitarStringToScientificPitchNotation);
-        let resolvedNotes = guitarStrings.filter(function(string){return string.fret > 0; })
+        let resolvedNotes = guitarStrings.filter(function(string){return string.fret !== null; })
                                         .map(this.convertStringToResolvedPitchNumber)
                                         .map(this.convertNumberToSciPitchNotation);
         
