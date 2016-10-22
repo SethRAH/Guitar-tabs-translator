@@ -1,8 +1,7 @@
 # WELCOME
-Guitar tabs translator is supposed to be a quick tool to translate guitar tablature to score music (only one note at a time) and back. It currently only translates from 
-Guitar Tablature to Scientific Pitch Notation (ex: "C#4"). In the next release I'm planning on allowing you to switch the input from guitar tablature to scientific pitch
-notation and the output from scientific pitch notation to guitar tablature. After I get those down pretty good, then I plan on tackling how to render/create a form for 
-scored music.
+Guitar tabs translator is supposed to be a quick tool to translate guitar tablature to score music (only one chord at a time) and back. It currently only translates to and from 
+Guitar Tablature to Scientific Pitch Notation (ex: "C#4"). You can even translate from guitar tablature to guitar tablature to do things like translate into a different tuning
+or find alternate fingerings for the same tuning.
 
 ### Frameworks/Libraries
 This app uses TypeScript, which is a higher level javascript language that compiles into JavaScript ES5. The `*.ts` files you see here are type script files. When you run the

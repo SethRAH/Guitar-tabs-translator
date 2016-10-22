@@ -4,7 +4,8 @@ import { ComponentOption } from './classes/componentOption';
 
 const outputComponents = [
     {name: 'Scientific Pitch Notation'},
-    {name: 'Guitar Tablature'}
+    {name: 'Guitar Tablature'},
+    {name: 'Score Notation'}
 ];
 
 @Component({
