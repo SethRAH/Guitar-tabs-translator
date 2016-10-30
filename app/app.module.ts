@@ -16,6 +16,7 @@ import { ScoreNotationOutputComponent} from './score-notation-output.component';
 import { MusicNotationService } from './music-notation.service';
 import { GuitarTablatureService } from './guitar-tablature.service';
 import { ScientificNotationService } from './scientific-notation.service';
+import { ScoreNotationService} from './score-notation.service';
 
 @NgModule({
   imports:      [ 
@@ -36,7 +37,8 @@ import { ScientificNotationService } from './scientific-notation.service';
   providers: [
     MusicNotationService,
     GuitarTablatureService,
-    ScientificNotationService
+    ScientificNotationService,
+    ScoreNotationService
     ],
   bootstrap: [ AppComponent ]
 })
